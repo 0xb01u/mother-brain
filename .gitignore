@@ -1,0 +1,10 @@
+# Binaries:
+/target
+*.out
+
+# Own bot stuff:
+.token
+
+# Own configuration files:
+wordlist.txt
+secret256.dat
