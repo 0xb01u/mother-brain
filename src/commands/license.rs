@@ -34,10 +34,10 @@ pub fn run() -> String {
     GNU Affero General Public License for more details.\n\
     \n\
     You should have received a copy of the GNU Affero General Public License \
-    along with this program. If not, see <https://www.gnu.org/licenses/>.\n".to_string()
+    along with this program. If not, see <https://www.gnu.org/licenses/>.\n"
+        .to_string()
 }
 
 pub fn register() -> CreateCommand {
     CreateCommand::new("license").description("Show the software license for this bot.")
 }
-

@@ -16,7 +16,12 @@
  *  You should have received a copy of the GNU Affero General Public License
  *  along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
-pub mod code;
-pub mod cracktime;
-pub mod license;
-pub mod pswd;
+use serenity::builder::CreateCommand;
+
+pub fn run() -> String {
+    "My source code can be found here: https://github.com/0xb01u/mother-brain".to_string()
+}
+
+pub fn register() -> CreateCommand {
+    CreateCommand::new("code").description("Get a link to this bot's source code.")
+}

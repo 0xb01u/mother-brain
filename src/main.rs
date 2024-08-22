@@ -52,6 +52,7 @@ impl EventHandler for Bot {
                 "pswd" => Some(commands::pswd::run(&command.data.options())),
                 "cracktime" => Some(commands::cracktime::run(&command.data.options())),
                 "license" => Some(commands::license::run()),
+                "code" => Some(commands::code::run()),
                 _ => None,
             };
 
@@ -76,7 +77,12 @@ impl EventHandler for Bot {
         // Register slash commands:
         let commands = Command::set_global_commands(
             &ctx.http,
-            vec![commands::pswd::register(), commands::cracktime::register(), commands::license::register()],
+            vec![
+                commands::pswd::register(),
+                commands::cracktime::register(),
+                commands::license::register(),
+                commands::code::register(),
+            ],
         )
         .await
         .unwrap();
