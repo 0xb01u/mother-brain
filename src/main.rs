@@ -31,22 +31,6 @@ impl EventHandler for Bot {
     // Process slash commands:
     async fn interaction_create(&self, ctx: Context, interaction: Interaction) {
         if let Interaction::Command(command) = interaction {
-            // Authentication: only serve my user ID.
-            let usr = &command.user;
-            let usr_id = usr.id.get();
-            let name = &usr.name;
-
-            if usr_id != 231844961878802442 {
-                let content = CreateInteractionResponseMessage::new()
-                    .content(format!("I am sorry {}, I'm afraid I can't do that.", name))
-                    .ephemeral(true);
-                let builder = CreateInteractionResponse::Message(content);
-                if let Err(why) = command.create_response(&ctx.http, builder).await {
-                    println!("Could not respond to slash command: {why}");
-                }
-
-                return;
-            }
 
             let cmd_response = match command.data.name.as_str() {
                 "pswd" => Some(commands::pswd::run(&command.data.options())),
