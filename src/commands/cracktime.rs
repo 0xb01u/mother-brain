@@ -36,7 +36,7 @@ const SHA256_TO_BCRYPT5_TIME: f64 = 8.81e6 / (1.0 / (0.0024385929107666 / 4.0));
 //  * https://wildlyinaccurate.com/bcrypt-choosing-a-work-factor/ (Intel i3-2120 (Quad Core, 3.30GHz))
 //    (assumed only one core used).
 //  * https://en.bitcoin.it/wiki/Non-specialized_hardware_comparison#CPUs.2FAPUs (Core i3-2100
-//    @ 3.10 GHz, extrapolated to0 GHz).
+//    @ 3.10 GHz, extrapolated to 4.0 GHz).
 const HOURS_TO_SECONDS: f64 = 3600.0;
 const DAYS_TO_SECONDS: f64 = 3600.0 * 24.0;
 const YEARS_TO_SECONDS: f64 = 3600.0 * 24.0 * 365.0;
