@@ -105,7 +105,7 @@ pub fn run(options: &[ResolvedOption]) -> String {
     let mut pswd = "".to_owned();
 
     for _ in 0..num_words {
-        pswd.push_str(&format!("{} ", words[rng.gen_range(0..words.len())]));
+        pswd.push_str(&format!("{} ", words[rng.random_range(0..words.len())]));
     }
     // Pad result with spaces to 512 characters
     // (so the ciphertext provides no information is given on the length of the decoded password's words):
@@ -113,7 +113,7 @@ pub fn run(options: &[ResolvedOption]) -> String {
     pswd = pswd[0..512].to_string();
 
     // Generate random initiation vector:
-    let iv_str = format!("{:016x}", rng.gen::<u64>());
+    let iv_str = format!("{:016x}", rng.random::<u64>());
     let iv = iv_str.as_bytes();
 
     // Encrypt the resposne (list of words composing the password) using the pswd_key as key,
