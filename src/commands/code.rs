@@ -19,7 +19,7 @@
 use serenity::builder::CreateCommand;
 
 pub fn run() -> String {
-    "My source code can be found here: https://github.com/0xb01u/mother-brain".to_string()
+    "My source code can be found here: https://codeberg.org/Bolu/Mother-Brain".to_string()
 }
 
 pub fn register() -> CreateCommand {
